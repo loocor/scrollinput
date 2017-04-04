@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Scrollbar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/smooth-scrollbar@latest/dist/smooth-scrollbar.css">
+    <script src="https://unpkg.com/smooth-scrollbar@latest/dist/smooth-scrollbar.js"></script>
+    <script src="https://unpkg.com/jquery@3.2.1"></script>
+    <style>
+        body {
+            margin: 0;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        #container {
+            display: block;
+            overflow: hidden;
+            margin: 0 auto;
+            border-radius: 5px;
+            border: solid 1px #585858;
+            box-shadow: inset 0 0 30px 0px #585858;
+        }
+
+        #scrollbar {
+            display: block;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        #scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        #mark {
+            display: block;
+            background: rgb(0%, 0%, 0%);
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            top: -20px;
+            border-radius: 10px;
+            box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        #size {
+            font-family: Iosevka;
+            font-size: 2em;
+            position: relative;
+            top: -30px;
+            color: grey;
+        }
+
+        #content {
+            display: inline-block;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAABGAQMAAAA92sJMAAAABlBMVEU8PDwAAAAI82yHAAAAAnRSTlP/AOW3MEoAAAAkSURBVHgBY7D/jwIGK/8zmfxR/uf/SGjw8W0+n0dGw4s/ygcAxHNBYi/In7IAAAAASUVORK5CYII=);
+            background-origin: content-box, padding-box;
+            background-position: bottom;
+            background-repeat: repeat-x;
+            background-size: 60px, auto, contain;
+        }
+
+        #container {
+            width: 300px;
+            height: 50px;
+        }
+
+        #scrollbar {
+            width: 300px;
+            height: 60px;
+        }
+
+        #mark {
+            width: 4px;
+            height: 20px;
+        }
+
+        #content {
+            width: 1300px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="scrollbar">
+            <div id="content">
+            </div>
+        </div>
+        <div id="mark"></div>
+    </div>
+    <p id="size"></p>
+</body>
+<script>
+    var options = {
+        speed: 0.5,
+        alwaysShowTracks: true,
+        overscrollEffect: "glow",
+        overscrollEffectColor: "#FFF"
+    };
+    var scrollbar = Scrollbar.init(document.getElementById('scrollbar'), options);
+    scrollbar.scrollTo(100, 0);
+    scrollbar.limit.y = 0;
+    scrollbar.addListener(function (status) {
+        $('#size').html(status.offset.x / 10);
+        console.log(status.offset.x / 10);
+    })
+</script>
+
+</html>
