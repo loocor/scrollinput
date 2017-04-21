@@ -1,0 +1,67 @@
+body {
+    overflow: hidden;
+    text-align: center;
+    user-select: none;
+    width: 304px;
+    height: 90px;
+    padding: 0;
+    margin: 0;
+}
+
+.scrollbar {
+    width: 300px;
+    height: 90px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content {
+    display: inline-block;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    width: 1300px;
+    height: 85px;
+}
+
+.size {
+    font-family: HelveticaNeue-Light;
+    font-size: 1.35em;
+    position: relative;
+    color: grey;
+    margin-top: 0;
+    margin-bottom: -30px;
+}
+
+.cover {
+    display: block;
+    width: 100px;
+    height: 90px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.left {
+    background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 100%);
+    left: -100px;
+    top: -90px;
+}
+
+.right {
+    background-image: linear-gradient(-90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.00) 100%);
+    right: -100px;
+    top: -180px;
+}
+
+.mark {
+    height: 35px;
+    width: 2px;
+    display: block;
+    background-color: red;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: -240px;
+}
